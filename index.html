@@ -9,7 +9,34 @@
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="canvas" width="276" height="414"></canvas>
+    <div id="overlay">
+        <div id="animationContainer">
+            <img src="img/turnon/turnon1.png" id="image1" class="animatedImage" alt="Animation Image 1">
+            <img src="img/turnon/turnon2.png" id="image2" class="animatedImage" alt="Animation Image 2">
+            <img src="img/turnon/turnon3.png" id="image3" class="animatedImage" alt="Animation Image 3">
+        </div>
+    </div>
+    <div id="container">
+        <img id="leftImage" src="img/zeitung1.png" alt="Left Image">
+        <canvas id="canvas" width="276" height="414"></canvas>
+        <img id="rightImage" src="img/zeitung2.png" alt="Right Image">
+    </div>
+    <p>
+        <label for="potiSlider">Simulate Poti Value:</label>
+        <input type="range" id="potiSlider" min="180" max="880" value="180">
+    </p>
+    <p>
+        <span id="speedValue">Speed: 0</span>
+    </p>
+    <p>
+        <span id="potiValue">Poti: 0</span>
+    </p>
+    <p>
+        <button id="connectButton">Connect to Arduino</button>
+    </p>
+    <script src="serial.js"></script>
     <script src="game.js"></script>
+    <script src="switch.js"></script>
+    <script src="slider.js"></script>
 </body>
 </html>

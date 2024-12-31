@@ -1,9 +1,66 @@
-#canvas
-{
-    background-color:#30c0df;
-    border: 2px solid black;
-    display: block;
-    margin: auto;
-    padding: auto;
-    
+#container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;      /* Existing padding for all sides */
+    padding-top: 100px;  /* Overrides the top padding */
+    padding-bottom: 100px;
 }
+
+#leftImage, #rightImage {
+    height: 414px; /* Match the canvas height */
+    margin: 0 0px; /* Horizontal padding between images and canvas */
+}
+
+#canvas {
+    background-color: #30c0df;
+    border: 2px solid black;
+}
+
+body {
+    background-image: url('img/background.png');
+    background-position: top left;   /* Position image in the top-left corner */
+    background-size: 100px 50px;    /* Set the width and height of the image */
+    background-repeat: repeat;    /* Don't repeat the image */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 1);
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+
+/* Animation container */
+#animationContainer {
+    position: absolute;
+    width: 200px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    top: 37%;      /* Center vertically */
+    left: 36%;     /* Center horizontally */
+    transform: translate(-20%, 20%); /* Adjust position to exact center */
+}
+
+/* Animated images */
+.animatedImage {
+    position: absolute;
+    width: 100%;  /* Scale images to container width */
+    height: 100%; /* Scale images to container height */
+    opacity: 0;
+    animation: cycle 1s infinite; /* Cycle animation, infinite loop */
+}
+
+/* Keyframes for cycling through images */
+@keyframes cycle {
+    0%, 33% { opacity: 1; }
+    34%, 100% { opacity: 0; }
+}
+
+/* Offset animations for each image */
+#image1 { animation-delay: 0ms; }
+#image2 { animation-delay: 333ms; }
+#image3 { animation-delay: 666ms; }
